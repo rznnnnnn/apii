@@ -66,3 +66,83 @@ p {
     opacity: 0.75;
     user-select: none;
 }
+/* Base Styles (desktop/laptop) */
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('images/bg.jpeg');
+    background-size: cover;
+    background-position: center center;
+}
+
+.paper {
+    position: absolute;
+    background-image: url('images/paper.jpeg');
+    background-size: cover;
+    background-position: center center;
+    padding: 20px 100px;
+    transform: rotateZ(-5deg);
+    box-shadow: 1px 15px 20px 0px rgba(0, 0, 0, 0.5);
+}
+
+/* Specific Styles for Mobile Devices */
+@media (max-width: 768px) {
+    .paper {
+        padding: 10px 50px;
+        width: 80%;
+        margin: 10px;
+        box-shadow: 1px 8px 10px 0px rgba(0, 0, 0, 0.3);
+    }
+
+    .paper.image {
+        padding: 5px;
+    }
+
+    .paper.image p {
+        font-size: 18px;
+    }
+
+    img {
+        max-width: 100%;
+        width: auto;
+        height: auto;
+    }
+
+    .paper.koala {
+        width: 150px;
+        height: 150px;
+    }
+
+    .paper.koala::after {
+        background-size: 100px;
+    }
+
+    p {
+        font-size: 24px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .paper {
+        padding: 5px 20px;
+        width: 90%;
+        margin: 5px;
+        transform: rotateZ(0deg);
+    }
+
+    p {
+        font-size: 20px;
+    }
+
+    .paper.koala {
+        width: 100px;
+        height: 100px;
+    }
+
+    .paper.koala::after {
+        background-size: 80px;
+    }
+}
